@@ -6,6 +6,6 @@ export type FirebaseContextType = {
   FieldValue: typeof Firebase.firestore.FieldValue;
 };
 
-const FirebaseContext = createContext<FirebaseContextType | null>(null);
+const FirebaseContext = createContext({} as FirebaseContextType);
 
 export default FirebaseContext;
