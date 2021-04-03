@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import Header from '../components/header';
 
 const NotFound: FC = () => {
   useEffect(() => {
@@ -7,6 +8,7 @@ const NotFound: FC = () => {
 
   return (
     <div className="bg-gray-background">
+      <Header />
       <div className="mx-auto max-w-screen-lg">
         <p className="text-center text-2xl">Not Found!</p>
       </div>
