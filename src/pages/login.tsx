@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 
-import FirebaseContext, { FirebaseContextType } from '../context/firebase';
+import FirebaseContext from '../context/firebase';
 
-export default function Login() {
+const Login: FC = () => {
   const history = useHistory();
-  const { firebase } = useContext(FirebaseContext) as Partial<FirebaseContextType>;
+  const { firebase } = useContext(FirebaseContext);
 
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
@@ -82,4 +82,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;
