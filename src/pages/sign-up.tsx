@@ -3,11 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 import { doesUsernameExist } from '../services/firebase';
-import FirebaseContext, { FirebaseContextType } from '../context/firebase';
+import FirebaseContext from '../context/firebase';
 
 const SignUp: FC = () => {
   const history = useHistory();
-  const { firebase } = useContext(FirebaseContext) as Partial<FirebaseContextType>;
+  const { firebase } = useContext(FirebaseContext);
 
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
@@ -39,6 +39,7 @@ const SignUp: FC = () => {
           fullName,
           emailAddress: emailAddress.toLowerCase(),
           following: [],
+          followers: [],
           dateCreated: Date.now()
         });
 
@@ -50,6 +51,7 @@ const SignUp: FC = () => {
         setError(error.message);
       }
     } else {
+      setUsername('');
       setError('That username is already taken, please try another');
     }
   };
@@ -83,7 +85,7 @@ const SignUp: FC = () => {
             <input
               aria-label="Enter your full name"
               type="text"
-              placeholder="Full Name"
+              placeholder="Full name"
               className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
               onChange={({ target }) => setFullName(target.value)}
               value={fullName}
