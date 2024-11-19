@@ -14,7 +14,7 @@
     "autoprefixer": "^10.2.4",
     "date-fns": "^2.18.0",
     "eslint-import-resolver-typescript": "^2.4.0",
-    "firebase": "^8.2.9",
+    "firebase": "^10.9.0",
     "postcss-cli": "^8.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
